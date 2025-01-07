@@ -1,36 +1,35 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
+import { IMG_HOST } from "../api";
 
 type AnimeCardProps = {
   title: string;
-  description: string;
-  imageUrl: string;
+  image: string;
+  code: string;
 };
 
-const AnimeCard: React.FC<AnimeCardProps> = ({
-  title,
-  description,
-  imageUrl,
-}) => {
+const AnimeCard: React.FC<AnimeCardProps> = ({ title, image, code }) => {
   return (
-    <div className="w-[252px] h-[60vh] rounded-lg shadow-lg overflow-hidden flex flex-col">
-      <div className="w-full h-[80%] overflow-hidden">
-        <img
-          src={imageUrl}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
-        />
-      </div>
-      <div className="p-4 flex flex-col justify-between flex-grow overflow-hidden">
-        <div className="flex flex-col flex-grow">
-          <h3 className="font-bold text-lg text-gray-800 ">{title}</h3>
-          <p className="text-gray-600 mt-1 text-ellipsis overflow-hidden w-full h-full">
-            {description}
-          </p>
+    <Link href={`/anime/${code}`}>
+      <div className="relative w-[252px]  rounded-lg shadow-lg overflow-hidden flex flex-col bg-black group">
+        {/* Картинка */}
+        <div className="w-full h-[80%] overflow-hidden relative">
+          <img
+            src={IMG_HOST + image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-110"
+          />
+          {/* Затемняющий слой */}
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 ease-in-out"></div>
         </div>
+
+        <h3 className="py-4   px-4 font-bold text-md text-center text-white truncate">
+          {title}
+        </h3>
       </div>
-    </div>
+    </Link>
   );
 };
 
