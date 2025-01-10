@@ -11,13 +11,9 @@ const Home: React.FC = () => {
       {/* Header */}
       <Header />
       {/* Main Content */}
-      <main className="container mx-auto px-4 bg-gray-300">
+      <main className="container mx-auto px-4 bg-slate-300">
         {/* Топ Аниме */}
         <section id="top-anime" className="container">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 pt-7">
-            Топ Аниме
-          </h2>
-
           <AnimeListPage />
         </section>
       </main>
