@@ -65,22 +65,18 @@ const Header: React.FC = () => {
         >
           <ul className="flex flex-col items-end   sm:flex-row sm:space-x-4 sm:py-0 py-20 text-gray-600 items-center">
             <li>
-              <Link href="/" className="block py-2 px-4 hover:text-blue-500">
+              <Link
+                href="/"
+                className="block py-2 text-4xl  px-4 hover:text-blue-500"
+              >
                 Главная
               </Link>
             </li>
-            <li>
-              <Link
-                href="/top-anime"
-                className="block py-6 px-4 hover:text-blue-500"
-              >
-                Топ Аниме
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="/last-update"
-                className="block py-2 px-4 hover:text-blue-500"
+                className="block py-2 px-4 text-4xl hover:text-blue-500"
               >
                 Последнее обновление
               </Link>

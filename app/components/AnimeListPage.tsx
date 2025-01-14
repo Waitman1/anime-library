@@ -37,7 +37,7 @@ const AnimeListPage: React.FC = ({}) => {
     <>
       <div className="container py-5 px-0">
         <SearchInput />
-        <h2 className="text-3xl font-bold text-gray-800 mb-4 pt-7 ml-12">
+        <h2 className="text-5xl font-bold text-gray-800 mb-4 pt-7 ml-12">
           Топ Аниме
         </h2>
         {loading && <Loader />}
@@ -53,10 +53,11 @@ const AnimeListPage: React.FC = ({}) => {
         </div>
 
         <Pagination
-          className="mt-24 flex justify-center"
+          className="mt-24 flex justify-center custom-pagination"
           current={activePage}
           total={pagination?.pages}
           defaultCurrent={1}
+          showSizeChanger={false}
           onChange={handlePageChange}
         />
       </div>

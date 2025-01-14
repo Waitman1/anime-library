@@ -13,10 +13,7 @@ interface InputProps {
   onChange?: (value: string) => void;
 }
 
-export default function SearchInput({
-  placeholder = "Поиск по названию",
-  type = "text",
-}: InputProps) {
+export default function SearchInput({ type = "text" }: InputProps) {
   const [inputValue, setInputValue] = useState("");
   const [titles, setTitles] = useState<Title[]>();
   const [loading, setLoading] = useState(false);
@@ -43,17 +40,17 @@ export default function SearchInput({
           getSearchTitles();
         }}
       >
-        <div className="w-full max-w-xl mx-auto p-4   flex flex-col sm:flex-row gap-4 items-center">
+        <div className="w-full max-w-xl mx-auto p-4 flex flex-col sm:flex-row gap-4 sm:items-start">
           <input
             type={type}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder={placeholder}
-            className="flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 sm:text-base"
+            placeholder="Поиск по названию"
+            className="flex-grow p-3 border border-gray-300 text-2xl rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder:text-gray-400 sm:placeholder:text-sm lg:placeholder:text-2xl"
           />
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-all"
+            className="bg-blue-500 text-xl hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all h-full"
           >
             Найти
           </button>

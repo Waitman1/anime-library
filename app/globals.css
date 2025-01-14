@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: #0a0a0a; */
     --foreground: #ededed;
   }
 }
@@ -17,5 +17,33 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Amatic SC", serif;
+}
+
+.custom-pagination .ant-pagination-item {
+  background-color: #f3f4f6; /* Светло-серый фон для всех кнопок */
+  border-color: #d1d5db; /* Цвет границы */
+}
+
+.custom-pagination .ant-pagination-item:hover {
+  border-color: #2563eb; /* Цвет границы при наведении */
+}
+
+.custom-pagination .ant-pagination-item-active {
+  /* Активная кнопка — яркий синий */
+  color: #fff; /* Белый текст для активной кнопки */
+  border-color: #2563eb; /* Синий цвет границы */
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link,
+.custom-pagination .ant-pagination-next .ant-pagination-item-link {
+  background-color: #3b82f6; /* Кнопки "Previous" и "Next" */
+  color: #fff; /* Белый текст */
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link:hover,
+.custom-pagination .ant-pagination-next .ant-pagination-item-link:hover {
+  background-color: #2563eb;
+  border-color: #1e40af;
+  /* Цвет границы при наведении */
 }
